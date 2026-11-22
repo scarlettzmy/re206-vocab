@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE206 · 第9周词汇表</title>
+<style>
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:#F0F4F8; color:#2F3B4D; min-height:100vh; padding:0 0 60px; overflow-x:hidden; }
+  .wrap { max-width:640px; margin:0 auto; padding:0 16px; }
+  .navbar { display:flex; align-items:center; padding:14px 4px 10px; }
+  .navbar a { text-decoration:none; color:#3D6EA8; font-weight:700; font-size:14px; }
+  .banner { background:linear-gradient(100deg,#4E7FB8 0%,#5B8EC8 55%,#7FA9D8 100%); border-radius:18px; padding:20px; color:#fff; box-shadow:0 10px 24px rgba(91,142,200,.28); }
+  .banner h1 { font-size:21px; font-weight:800; letter-spacing:.5px; }
+  .banner .sb { font-size:12.5px; margin-top:8px; line-height:1.7; opacity:.95; }
+  .tabs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:16px 0 6px; }
+  .tab { background:#fff; border:1.5px solid #DCE5EF; border-radius:13px; padding:12px 8px; text-align:center; cursor:pointer; min-width:0; }
+  .tab .t { font-size:14px; font-weight:800; color:#2F3B4D; }
+  .tab .s { font-size:11px; color:#7B8794; margin-top:3px; }
+  .tab.on { background:#5B8EC8; border-color:#5B8EC8; }
+  .tab.on .t, .tab.on .s { color:#fff; }
+  .hint { font-size:12px; color:#7B8794; margin:10px 2px 6px; }
+  .list { display:flex; flex-direction:column; gap:10px; }
+  .row { background:#fff; border-radius:14px; padding:13px 15px; box-shadow:0 4px 12px rgba(47,59,77,.05); }
+  .row .h1 { display:flex; align-items:baseline; flex-wrap:wrap; gap:8px; }
+  .row .no { font-size:11px; color:#9AA7B6; font-weight:700; min-width:16px; }
+  .row .w { font-size:17px; font-weight:800; color:#1D5FB0; }
+  .row .ph { font-size:12.5px; color:#B23A2E; font-style:italic; }
+  .row .pos { font-size:11px; background:#EAF2FC; color:#3D6EA8; padding:1px 7px; border-radius:9px; font-weight:700; }
+  .row .c { font-size:13px; font-weight:700; color:#2F3B4D; margin-top:4px; }
+  .row .en { font-size:13px; color:#3A4A5C; margin-top:6px; line-height:1.6; }
+  .row .en b { color:#1D5FB0; }
+  .row .cn { font-size:12px; color:#8A97A6; margin-top:2px; line-height:1.6; }
+  .foot { text-align:center; font-size:12px; color:#9AA7B6; margin-top:22px; line-height:1.8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="navbar"><a href="/">← 返回上一级菜单</a></nav>
+  <div class="banner">
+    <h1>RE206 · 第 9 周词汇表</h1>
+    <div class="sb">2026/11/7 – 11/13<br>板块一 集训准备词 26–50（25 词）· 板块二 U6L2 课文词（21 词）</div>
+  </div>
+  <div class="tabs">
+    <div class="tab on" id="t0" onclick="pick(0)"><div class="t">板块一</div><div class="s">PET 集训准备词 25 词</div></div>
+    <div class="tab" id="t1" onclick="pick(1)"><div class="t">板块二</div><div class="s">U6L2 课文词 21 词</div></div>
+  </div>
+  <div class="hint" id="hint"></div>
+  <div class="list" id="list"></div>
+  <div class="foot">海沃英语 · RE206　Vocabulary List　Week 9</div>
+</div>
+<script>
+const DATA = [[{"no":"1","w":"memory","ph":"ˈmeməri","p":"n.","c":"记忆；记忆力","en":"I have a good memory for faces.","cn":"我对人脸记得很牢。"},{"no":"2","w":"instructor","ph":"ɪnˈstrʌktə(r)","p":"n.","c":"教练；导师","en":"Our swimming instructor is very patient.","cn":"我们的游泳教练很有耐心。"},{"no":"3","w":"session","ph":"ˈseʃn","p":"n.","c":"一段时间；课程","en":"We have a two-hour training session every Saturday.","cn":"我们每周六有一次两小时的训练课。"},{"no":"4","w":"opportunity","ph":"ˌɒpəˈtjuːnəti","p":"n.","c":"机会","en":"This job is a great opportunity to learn.","cn":"这份工作是很好的学习机会。"},{"no":"5","w":"arrange","ph":"əˈreɪndʒ","p":"v.","c":"安排；整理","en":"Let\u0027s arrange a meeting for next week.","cn":"我们安排下周开个会吧。"},{"no":"6","w":"talent","ph":"ˈtælənt","p":"n.","c":"天赋；人才","en":"She has a talent for drawing.","cn":"她有绘画天赋。"},{"no":"7","w":"competition","ph":"ˌkɒmpəˈtɪʃn","p":"n.","c":"比赛；竞争","en":"He won first prize in the singing competition.","cn":"他在歌唱比赛中获得一等奖。"},{"no":"8","w":"essential","ph":"ɪˈsenʃl","p":"adj.","c":"必不可少的","en":"Water is essential for life.","cn":"水是生命必不可少的。"},{"no":"9","w":"suitable","ph":"ˈsuːtəbl","p":"adj.","c":"合适的","en":"This film is suitable for children.","cn":"这部电影适合儿童观看。"},{"no":"10","w":"necessary","ph":"ˈnesəsəri","p":"adj.","c":"必要的","en":"It is necessary to book tickets early.","cn":"有必要早点订票。"},{"no":"11","w":"involve","ph":"ɪnˈvɒlv","p":"v.","c":"涉及；使参与","en":"The job involves working with children.","cn":"这份工作涉及与孩子打交道。"},{"no":"12","w":"improve","ph":"ɪmˈpruːv","p":"v.","c":"提高；改善","en":"Reading every day will improve your English.","cn":"每天阅读会提高你的英语。"},{"no":"13","w":"regular","ph":"ˈreɡjələ(r)","p":"adj.","c":"定期的；规律的","en":"He takes regular exercise to stay fit.","cn":"他定期锻炼以保持健康。"},{"no":"14","w":"event","ph":"ɪˈvent","p":"n.","c":"事件；活动","en":"The school sports event is next Friday.","cn":"学校运动会下周五举行。"},{"no":"15","w":"perform","ph":"pəˈfɔːm","p":"v.","c":"表演；执行","en":"They will perform on stage tonight.","cn":"他们今晚将在台上表演。"},{"no":"16","w":"nervous","ph":"ˈnɜːvəs","p":"adj.","c":"紧张的","en":"I felt nervous before the exam.","cn":"考试前我感到紧张。"},{"no":"17","w":"attraction","ph":"əˈtrækʃn","p":"n.","c":"吸引人的事物；吸引力","en":"The museum is a popular tourist attraction.","cn":"这家博物馆是热门旅游景点。"},{"no":"18","w":"keen to","ph":"kiːn tə","p":"phr.","c":"渴望（做某事）","en":"She is keen to join the school team.","cn":"她很想加入校队。"},{"no":"19","w":"common","ph":"ˈkɒmən","p":"adj.","c":"常见的；共同的","en":"Rain is common in spring here.","cn":"这里春天经常下雨。"},{"no":"20","w":"connect","ph":"kəˈnekt","p":"v.","c":"连接；联系","en":"This road connects the two villages.","cn":"这条路连接两个村庄。"},{"no":"21","w":"scene","ph":"siːn","p":"n.","c":"场景；现场","en":"The last scene of the film was very moving.","cn":"电影最后一幕非常感人。"},{"no":"22","w":"doubt","ph":"daʊt","p":"n./v.","c":"怀疑","en":"There is no doubt that he will come.","cn":"毫无疑问他会来。"},{"no":"23","w":"trust","ph":"trʌst","p":"v./n.","c":"信任","en":"You can trust him with your bike.","cn":"你可以放心把自行车交给他。"},{"no":"24","w":"judge","ph":"dʒʌdʒ","p":"n./v.","c":"裁判；判断","en":"She was a judge in the art competition.","cn":"她是这次美术比赛的评委。"},{"no":"25","w":"realize","ph":"ˈriːəlaɪz","p":"v.","c":"意识到；实现","en":"I didn\u0027t realize how late it was.","cn":"我没意识到已经这么晚了。"}],[{"no":"1","w":"world heritage sites","ph":"wɜːld ˈherɪtɪdʒ saɪts","p":"n.","c":"世界遗产（地）","en":"These old temples are world heritage sites.","cn":"这些古庙是世界遗产。"},{"no":"2","w":"customs","ph":"ˈkʌstəmz","p":"n.","c":"风俗；习俗","en":"Every country has its own customs.","cn":"每个国家都有自己的风俗。"},{"no":"3","w":"beliefs","ph":"bɪˈliːfs","p":"n.","c":"信仰；信念","en":"People here have different beliefs.","cn":"这里的人有不同的信仰。"},{"no":"4","w":"culture","ph":"ˈkʌltʃə(r)","p":"n.","c":"文化","en":"Food is an important part of culture.","cn":"食物是文化的重要组成部分。"},{"no":"5","w":"historical","ph":"hɪˈstɒrɪkl","p":"adj.","c":"历史的；历史研究的","en":"We visited a historical museum.","cn":"我们参观了一座历史博物馆。"},{"no":"6","w":"historic","ph":"hɪˈstɒrɪk","p":"adj.","c":"有历史意义的","en":"This is a historic moment for our town.","cn":"这是我们镇上有历史意义的时刻。"},{"no":"7","w":"wonder","ph":"ˈwʌndə(r)","p":"n.","c":"奇观；奇迹","en":"The Great Wall is a wonder of the world.","cn":"长城是世界奇观。"},{"no":"8","w":"location","ph":"ləʊˈkeɪʃn","p":"n.","c":"位置；地点","en":"The hotel is in a quiet location.","cn":"这家酒店位于安静的地方。"},{"no":"9","w":"well-known","ph":"ˌwel ˈnəʊn","p":"adj.","c":"著名的","en":"This beach is well-known for its white sand.","cn":"这片海滩以白沙著名。"},{"no":"10","w":"Pacific","ph":"pəˈsɪfɪk","p":"n./adj.","c":"太平洋（的）","en":"Japan is in the Pacific Ocean.","cn":"日本位于太平洋。"},{"no":"11","w":"Asian","ph":"ˈeɪʃn","p":"adj.","c":"亚洲的","en":"China is an Asian country.","cn":"中国是一个亚洲国家。"},{"no":"12","w":"single","ph":"ˈsɪŋɡl","p":"adj.","c":"单一的；单个的","en":"He lives in a single room.","cn":"他住在一间单人房里。"},{"no":"13","w":"Iceland","ph":"ˈaɪslənd","p":"n.","c":"冰岛","en":"Iceland is famous for its volcanoes.","cn":"冰岛以火山闻名。"},{"no":"14","w":"at least","ph":"ət liːst","p":"phr.","c":"至少","en":"The trip takes at least three hours.","cn":"这段路程至少需要三个小时。"},{"no":"15","w":"in danger","ph":"ɪn ˈdeɪndʒə(r)","p":"phr.","c":"处于危险中","en":"Many old buildings are in danger.","cn":"许多古老建筑处于危险之中。"},{"no":"16","w":"Arab states","ph":"ˈærəb steɪts","p":"n.","c":"阿拉伯国家","en":"Arab states have a long history.","cn":"阿拉伯国家历史悠久。"},{"no":"17","w":"Latin America","ph":"ˈlætɪn əˈmerɪkə","p":"n.","c":"拉丁美洲","en":"Latin America has many old cities.","cn":"拉丁美洲有许多古城。"},{"no":"18","w":"Europe","ph":"ˈjʊərəp","p":"n.","c":"欧洲","en":"She travelled around Europe last summer.","cn":"去年夏天她游历了欧洲。"},{"no":"19","w":"identify","ph":"aɪˈdentɪfaɪ","p":"v.","c":"确认；识别","en":"Can you identify the building in this photo?","cn":"你能认出这张照片里的建筑吗？"},{"no":"20","w":"tourism","ph":"ˈtʊərɪzəm","p":"n.","c":"旅游业","en":"Tourism brings money to the town.","cn":"旅游业给这个镇带来收入。"},{"no":"21","w":"replace","ph":"rɪˈpleɪs","p":"v.","c":"取代；替换","en":"They will replace the old windows.","cn":"他们将更换旧窗户。"}]];
+let cur = 0;
+function esc(s){ return String(s).replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+function mark(sentence, word){
+  const base = word.replace(/\(.*?\)/g,'').trim();
+  const parts = base.split(' ').filter(Boolean);
+  let out = esc(sentence);
+  parts.forEach(p=>{
+    const safe = esc(p).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    out = out.replace(new RegExp('\\b(' + safe + ')\\b','i'), '<b>$1</b>');
+  });
+  return out;
+}
+function pick(i){
+  cur = i;
+  document.getElementById('t0').classList.toggle('on', i===0);
+  document.getElementById('t1').classList.toggle('on', i===1);
+  document.getElementById('hint').textContent = i===0
+    ? '板块一 · PET 集训准备词（第 26–50 词）· 每天 5 词，读词 + 看例句'
+    : '板块二 · Reflect 2 U6L2 World Heritage 课文词 · 20 个词块 + 例句';
+  document.getElementById('list').innerHTML = DATA[i].map(x=>`
+    <div class="row">
+      <div class="h1"><span class="no">${x.no}</span><span class="w">${esc(x.w)}</span><span class="ph">${esc(x.ph)}</span><span class="pos">${esc(x.p)}</span></div>
+      <div class="c">${esc(x.c)}</div>
+      <div class="en">${mark(x.en, x.w)}</div>
+      <div class="cn">${esc(x.cn)}</div>
+    </div>`).join('');
+}
+pick(0);
+</script>
+</body>
+</html>
