@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>秋假居家自学词汇 · PET 集训准备词 1–25</title>
+<style>
+  :root{--blue:#1F4E79;--amber:#B45309;--line:#E3EAF1;--bg:#F4F8FC;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#EEF3F8;color:#22323B}
+  header{background:var(--blue);color:#fff;padding:16px 16px 14px}
+  header h1{margin:0;font-size:18px;letter-spacing:.5px}
+  header p{margin:5px 0 0;font-size:12px;opacity:.82}
+  .wrap{max-width:640px;margin:0 auto;padding:12px 12px 40px}
+  .search{display:flex;gap:8px;margin:10px 0 12px}
+  .search input{flex:1;padding:9px 12px;border:1px solid #CBD9E6;border-radius:8px;font-size:14px;outline:none;background:#fff}
+  .search input:focus{border-color:var(--blue)}
+  .card{background:#fff;border-radius:10px;padding:11px 13px;margin-bottom:9px;box-shadow:0 1px 2px rgba(31,78,121,.08)}
+  .top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .idx{color:var(--blue);font-size:12px;font-weight:700;min-width:20px}
+  .word{font-size:16px;font-weight:700;color:#12344F}
+  .ipa{font-size:12px;color:#7A8794}
+  .pos{font-size:11px;color:#7A5C00;font-style:italic}
+  .cn{font-size:13px;color:#334;margin-top:3px}
+  .ex{font-size:13px;color:var(--amber);margin-top:5px;line-height:1.45}
+  .ex .zh{display:block;color:#8A8F96;font-size:12px;margin-top:2px}
+  .ex b{background:#FFF1DC;border-radius:2px}
+  .empty{text-align:center;color:#98A2AD;padding:24px 0;font-size:13px}
+  footer{text-align:center;color:#98A2AD;font-size:11px;padding:6px 0 20px}
+</style>
+</head>
+<body>
+<header>
+  <h1>秋假居家自学词汇</h1>
+  <p>PET 集训准备词 1–25（共 25 词）· 2026/11/22 – 11/28</p>
+</header>
+<div class="wrap">
+  <div class="search"><input id="q" type="search" placeholder="搜索单词或中文，如 educate / 教育"></div>
+  <div id="list"></div>
+  <footer>RE206 · 秋假居家自学</footer>
+</div>
+<script>
+const DATA=[
+["education","/ˌedʒuˈkeɪʃn/","n.","教育","Education is important for children.","教育对孩子很重要。","Education"],
+["although","/ɔːlˈðəʊ/","conj.","虽然；尽管；即使","Although it rained, we went out.","虽然下雨，我们仍出门。","Although"],
+["contain","/kənˈteɪn/","v.","包含","This box contains old photos.","这个盒子装着旧照片。","contains"],
+["limit","/ˈlɪmɪt/","v.","限制；限定","Please limit your answer.","请限制你的答案。","limit"],
+["control","/kənˈtrəʊl/","v./n.","限制；约束；管理","It is hard to control temper.","控制脾气很难。","control"],
+["captain","/ˈkæptɪn/","n.","首领；队长","Our captain scored a goal.","我们队长进了一球。","captain"],
+["preparation","/ˌprepəˈreɪʃn/","n.","准备；准备工作","Good preparation helps a lot.","充分准备很有帮助。","preparation"],
+["present","/ˈpreznt/","n.","现在；礼物","I got a present today.","我今天收到一份礼物。","present"],
+["section","/ˈsekʃn/","n.","部门；部分","The reading section is easy.","阅读部分很简单。","section"],
+["organize","/ˈɔːɡənaɪz/","v.","组织","We organized a match.","我们组织了一场比赛。","organized"],
+["announcement","/əˈnaʊnsmənt/","n.","公告；通告","There was an announcement.","有一则通告。","announcement"],
+["sign","/saɪn/","n.","标志；信号","The sign says \"No swimming\".","牌子上写着“禁止游泳”。","sign"],
+["complain","/kəmˈpleɪn/","v.","抱怨","She often complains about food.","她常抱怨食物。","complains"],
+["certificate","/səˈtɪfɪkət/","n.","证书","He got a certificate.","他拿到了一张证书。","certificate"],
+["develop","/dɪˈveləp/","v.","发展；壮大","The city developed fast.","这座城市发展很快。","developed"],
+["ability","/əˈbɪləti/","n.","能力；才能","She has the ability to lead.","她有领导能力。","ability"],
+["workshop","/ˈwɜːkʃɒp/","n.","车间；工作坊","The workshop is new.","这个车间是新的。","workshop"],
+["public","/ˈpʌblɪk/","n./adj.","民众；公共的","The park is open to the public.","公园对公众开放。","public"],
+["throughout","/θruːˈaʊt/","prep.","遍及；贯穿","It rained throughout the night.","整晚都在下雨。","throughout"],
+["in advance","—","phr.","提前","Book your ticket in advance.","请提前订票。","advance"],
+["term","/tɜːm/","n.","学期","We have tests each term.","我们每学期都有考试。","term"],
+["encourage","/ɪnˈkʌrɪdʒ/","v.","鼓励","My teacher encouraged me.","老师鼓励了我。","encouraged"],
+["annual","/ˈænjuəl/","adj.","一年一度的","It is an annual event.","这是一年一度的活动。","annual"],
+["director","/dəˈrektə(r)/","n.","导演；部门负责人","The director was pleased.","导演很满意。","director"],
+["a range of","—","phr.","一系列","It sells a range of bags.","它出售各种包。","range"]
+];
+const hi=(s,w)=>s.replace(new RegExp('\\b('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')\\b','gi'),'<b>$1</b>');
+function render(kw){
+  kw=(kw||'').trim().toLowerCase();
+  const box=document.getElementById('list');
+  const rows=DATA.map((d,i)=>({d,i})).filter(({d})=>!kw||d[0].toLowerCase().includes(kw)||d[3].includes(kw));
+  if(!rows.length){box.innerHTML='<div class="empty">没有找到匹配的词</div>';return;}
+  box.innerHTML=rows.map(({d,i})=>`
+    <div class="card">
+      <div class="top"><span class="idx">${i+1}</span><span class="word">${d[0]}</span><span class="ipa">${d[1]}</span><span class="pos">${d[2]}</span></div>
+      <div class="cn">${d[3]}</div>
+      <div class="ex">${hi(d[4],d[6])}<span class="zh">${d[5]}</span></div>
+    </div>`).join('');
+}
+document.getElementById('q').addEventListener('input',e=>render(e.target.value));
+render('');
+</script>
+</body>
+</html>
