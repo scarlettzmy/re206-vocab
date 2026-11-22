@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>RE206 · 第 10 周词汇表</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#F2F5F8;color:#22323B;padding:0 0 28px;overflow-x:hidden}
+  .hd{background:linear-gradient(135deg,#1F4E79,#2E6E9E);color:#fff;padding:18px 16px 14px;border-radius:0 0 18px 18px}
+  .hd h1{font-size:19px;font-weight:700;letter-spacing:.5px}
+  .hd p{font-size:12px;opacity:.85;margin-top:5px;line-height:1.5}
+  .tabs{display:flex;gap:8px;padding:12px 14px 4px;position:sticky;top:0;background:#F2F5F8;z-index:5}
+  .tab{flex:1 1 0;min-width:0;text-align:center;padding:8px 4px;border-radius:10px;background:#fff;color:#5A6B78;font-size:12px;font-weight:600;line-height:1.3;border:1px solid #DDE5EC;transition:.15s}
+  .tab.on{background:#1F4E79;color:#fff;border-color:#1F4E79;box-shadow:0 3px 8px rgba(31,78,121,.25)}
+  .search{padding:10px 14px 2px}
+  .search input{width:100%;padding:9px 12px;border-radius:10px;border:1px solid #DDE5EC;font-size:14px;background:#fff;outline:none}
+  .wrap{padding:6px 14px}
+  .card{background:#fff;border-radius:12px;padding:11px 13px;margin-bottom:9px;border:1px solid #E6EDF3;box-shadow:0 1px 3px rgba(31,78,121,.05)}
+  .r1{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .no{font-size:11px;color:#9AA6B2;min-width:16px}
+  .w{font-size:16px;font-weight:700;color:#1F4E79}
+  .ph{font-size:12px;color:#B23A2E}
+  .pos{font-size:11px;color:#6B7A87;background:#EEF3F7;border-radius:4px;padding:0 5px}
+  .m{font-size:13px;color:#22323B;margin-top:3px}
+  .ex{margin-top:6px;padding-left:9px;border-left:2px solid #C9D4DE}
+  .ex .en{font-size:13px;color:#B4531F;line-height:1.45}
+  .ex .cn{font-size:12px;color:#8A97A3;margin-top:2px;line-height:1.4}
+  .ex .en b{color:#1F4E79;font-weight:700}
+  .foot{text-align:center;font-size:11px;color:#A6B2BD;margin-top:14px}
+  .empty{text-align:center;color:#9AA6B2;font-size:13px;padding:26px 0}
+  @media (min-width:640px){.wrap{max-width:640px;margin:0 auto}.tabs{max-width:640px;margin:0 auto}.search{max-width:640px;margin:0 auto}}
+</style>
+</head>
+<body>
+<div class="hd">
+  <h1>RE206 · 第 10 周词汇表</h1>
+  <p>2026/11/14 – 11/20　·　板块一 PET 集训准备词 51–75　·　板块二 Reflect 2 U7 课文词</p>
+</div>
+
+<div class="tabs">
+  <div class="tab on" data-sec="1">板块一 · 集训词 25</div>
+  <div class="tab" data-sec="2">板块二 · 课文词 34</div>
+</div>
+<div class="search"><input id="q" type="search" placeholder="搜索单词或中文释义…"></div>
+<div class="wrap" id="list"></div>
+<div class="foot">RE206 · 英语学习门户　|　数据每周更新</div>
+
+<script>
+const D1 = [
+  ["studio","ˈstjuːdiəʊ","n.","录音室；演播室","She booked a <b>studio</b> to record her first song.","她租了一间录音室录制她的第一首歌。"],
+  ["regret","rɪˈɡret","v./n.","感到遗憾；懊悔","I <b>regret</b> not studying harder last term.","我后悔上学期没有更努力学习。"],
+  ["influence","ˈɪnfluəns","n./v.","影响","Music has a strong <b>influence</b> on young people.","音乐对年轻人有很大影响。"],
+  ["original","əˈrɪdʒənl","adj.","有独到见解的；原创的","His ideas are always <b>original</b> and interesting.","他的想法总是独到而有趣。"],
+  ["ballet","ˈbæleɪ","n.","芭蕾舞","My sister has <b>ballet</b> lessons twice a week.","我妹妹每周上两次芭蕾课。"],
+  ["reach","riːtʃ","v.","伸手；到达；抵达","She <b>reached</b> for the book on the top shelf.","她伸手去拿书架最高层的书。"],
+  ["properly","ˈprɒpəli","adv.","正确地；恰当地","Please make sure the door is closed <b>properly</b>.","请确保门关好了。"],
+  ["habit","ˈhæbɪt","n.","习惯","Reading before bed is a good <b>habit</b>.","睡前阅读是个好习惯。"],
+  ["attend","əˈtend","v.","出席；参加","More than 200 students <b>attended</b> the meeting.","两百多名学生参加了会议。"],
+  ["creative","kriˈeɪtɪv","adj.","有创造力的；创造性的","She is a <b>creative</b> writer with many ideas.","她是一位富有创造力、点子很多的作家。"],
+  ["basic","ˈbeɪsɪk","adj.","基本的；基础的","You need some <b>basic</b> skills before you start.","开始之前你需要一些基本技能。"],
+  ["in addition","ɪn əˈdɪʃn","phr.","此外；除……以外（还）","<b>In addition</b>, the museum is free on Sundays.","此外，博物馆周日免费。"],
+  ["support","səˈpɔːt","v./n.","支持；支撑","My parents always <b>support</b> my decisions.","我父母总是支持我的决定。"],
+  ["artistic","ɑːˈtɪstɪk","adj.","有艺术天赋的；艺术的","The room is full of <b>artistic</b> photos.","房间里满是富有艺术感的照片。"],
+  ["competitive","kəmˈpetətɪv","adj.","竞争性的；有竞争力的","Swimming is a very <b>competitive</b> sport.","游泳是一项竞争性很强的运动。"],
+  ["compare","kəmˈpeə(r)","v.","比较；对比","<b>Compare</b> the two pictures and find five differences.","比较这两幅图，找出五处不同。"],
+  ["waste","weɪst","v./n.","浪费；废物","Don't <b>waste</b> water when you brush your teeth.","刷牙时不要浪费水。"],
+  ["intend to","ɪnˈtend tə","phr.","打算；想要","We <b>intend to</b> leave early tomorrow morning.","我们打算明天一早出发。"],
+  ["definitely","ˈdefɪnətli","adv.","肯定；确定地","I will <b>definitely</b> come to your party.","我一定会来参加你的聚会。"],
+  ["absolutely","ˈæbsəluːtli","adv.","绝对地；完全地","You are <b>absolutely</b> right about that.","关于那件事你完全正确。"],
+  ["certainly","ˈsɜːtnli","adv.","无疑；当然","I <b>certainly</b> hope we can meet again.","我当然希望我们能再见面。"],
+  ["exactly","ɪɡˈzæktli","adv.","确切地；精确地","The train arrived at <b>exactly</b> nine o'clock.","火车正好九点到达。"],
+  ["apart from","əˈpɑːt frəm","phr.","除了……之外","<b>Apart from</b> English, she also speaks French.","除了英语，她还会说法语。"],
+  ["believe","bɪˈliːv","v.","相信；认为","I <b>believe</b> he is telling the truth.","我相信他说的是实话。"],
+  ["cabin","ˈkæbɪn","n.","小木屋；船舱","We stayed in a small wooden <b>cabin</b> in the forest.","我们住在森林里的一间小木屋里。"]
+];
+const D2 = [
+  ["Zimbabwe","zɪmˈbɑːbweɪ","n.","津巴布韦","She spent two weeks in <b>Zimbabwe</b> last summer.","去年夏天她在津巴布韦待了两周。"],
+  ["female","ˈfiːmeɪl","adj./n.","女性的；女性","The <b>female</b> scientist won a famous prize.","这位女科学家获得了著名奖项。"],
+  ["outnumber","ˌaʊtˈnʌmbə(r)","v.","在数量上超过","In this school, girls <b>outnumber</b> boys.","在这所学校，女生人数多于男生。"],
+  ["follow","ˈfɒləʊ","v.","跟随；遵循","Just <b>follow</b> the signs to the museum.","跟着指示牌走就能到博物馆。"],
+  ["extraordinary","ɪkˈstrɔːdnri","adj.","非凡的；特别的","She told us an <b>extraordinary</b> story about her trip.","她给我们讲了一个关于她旅行的非凡故事。"],
+  ["challenge","ˈtʃælɪndʒ","n./v.","挑战","Learning to swim was a big <b>challenge</b> for me.","学游泳对我来说是个大挑战。"],
+  ["efforts","ˈefəts","n.","努力","Thanks to her <b>efforts</b>, the project was finished on time.","多亏了她的努力，项目按时完成。"],
+  ["society","səˈsaɪəti","n.","社会","Social media plays a big role in modern <b>society</b>.","社交媒体在现代社会中作用很大。"],
+  ["reveal","rɪˈviːl","v.","揭示；显露","The study <b>revealed</b> an important fact.","这项研究揭示了一个重要事实。"],
+  ["hidden","ˈhɪdn","adj.","隐藏的；隐秘的","There are <b>hidden</b> costs in this plan.","这个计划里有隐藏费用。"],
+  ["barrier","ˈbæriə(r)","n.","障碍；屏障","Language can be a <b>barrier</b> for new students.","语言可能成为新生的障碍。"],
+  ["pursue","pəˈsjuː","v.","追求；从事","She wants to <b>pursue</b> a career in medicine.","她想从事医学职业。"],
+  ["failure","ˈfeɪljə(r)","n.","失败","<b>Failure</b> is often the first step to success.","失败常常是成功的第一步。"],
+  ["success","səkˈses","n.","成功","The concert was a great <b>success</b>.","这场音乐会非常成功。"],
+  ["succeed","səkˈsiːd","v.","成功","He <b>succeeded</b> in passing the exam.","他成功通过了考试。"],
+  ["pleasant","ˈpleznt","adj.","令人愉快的","We had a <b>pleasant</b> afternoon in the park.","我们在公园度过了一个愉快的下午。"],
+  ["executive","ɪɡˈzekjətɪv","n./adj.","主管；行政的","The <b>executive</b> made an important decision.","这位主管做了一个重要决定。"],
+  ["necessary","ˈnesəsəri","adj.","必要的","It is <b>necessary</b> to check your work carefully.","有必要仔细检查你的作业。"],
+  ["in order to","ɪn ˈɔːdə tə","phr.","为了","She got up early <b>in order to</b> catch the bus.","她早起是为了赶上公交车。"],
+  ["factor","ˈfæktə(r)","n.","因素","Money is not the only <b>factor</b> in happiness.","金钱不是幸福的唯一因素。"],
+  ["recent","ˈriːsnt","adj.","最近的","In <b>recent</b> years, online learning has become popular.","近年来，线上学习变得流行。"],
+  ["amount","əˈmaʊnt","n./v.","数量；总计","A large <b>amount</b> of water was wasted.","大量的水被浪费了。"],
+  ["pay attention to","peɪ əˈtenʃn tə","phr.","注意","Please <b>pay attention to</b> the teacher's advice.","请注意老师的建议。"],
+  ["take responsibility","teɪk rɪˌspɒnsəˈbɪliti","phr.","承担责任","He <b>took responsibility</b> for the mistake.","他承担了这个错误的责任。"],
+  ["course","kɔːs","n.","课程；过程","I am taking an online <b>course</b> in photography.","我在上一门摄影网课。"],
+  ["human-powered","ˌhjuːmən ˈpaʊəd","adj.","人力的","They built a <b>human-powered</b> aircraft.","他们制造了一架人力飞机。"],
+  ["aircraft","ˈeəkrɑːft","n.","飞机；航空器","The <b>aircraft</b> landed safely.","飞机安全降落。"],
+  ["essay","ˈeseɪ","n.","文章；论文","She wrote an <b>essay</b> about her favourite person.","她写了一篇关于她最喜欢的人的文章。"],
+  ["reaction","riˈækʃn","n.","反应","My first <b>reaction</b> was to laugh.","我的第一反应是大笑。"],
+  ["media","ˈmiːdiə","n.","媒体","The story was all over the <b>media</b>.","这件事在媒体上到处都是。"],
+  ["depend on","dɪˈpend ɒn","phr.","依靠；取决于","Our plan <b>depends on</b> the weather.","我们的计划取决于天气。"],
+  ["motivated","ˈməʊtɪveɪtɪd","adj.","有积极性的；有动力的","Students are more <b>motivated</b> when lessons are fun.","当课程有趣时，学生更有动力。"],
+  ["Switzerland","ˈswɪtsələnd","n.","瑞士","<b>Switzerland</b> is famous for its mountains.","瑞士以山闻名。"],
+  ["researcher","rɪˈsɜːtʃə(r)","n.","研究员；研究人员","The <b>researcher</b> asked us some questions.","这位研究者问了我们一些问题。"]
+];
+const state = { sec: 1, q: '' };
+const list = document.getElementById('list');
+const qEl = document.getElementById('q');
+
+function render() {
+  const data = state.sec === 1 ? D1 : D2;
+  const q = state.q.trim().toLowerCase();
+  const rows = data.map((r, i) => ({ r, i })).filter(({ r }) => !q || r[0].toLowerCase().includes(q) || r[3].includes(q));
+  if (!rows.length) { list.innerHTML = '<div class="empty">没有找到匹配的单词</div>'; return; }
+  list.innerHTML = rows.map(({ r, i }) => `
+    <div class="card">
+      <div class="r1"><span class="no">${i + 1}</span><span class="w">${r[0]}</span><span class="ph">/${r[1]}/</span><span class="pos">${r[2]}</span></div>
+      <div class="m">${r[3]}</div>
+      <div class="ex"><div class="en">${r[4]}</div><div class="cn">${r[5]}</div></div>
+    </div>`).join('');
+}
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+  t.classList.add('on');
+  state.sec = +t.dataset.sec;
+  render();
+}));
+qEl.addEventListener('input', e => { state.q = e.target.value; render(); });
+render();
+</script>
+</body>
+</html>
